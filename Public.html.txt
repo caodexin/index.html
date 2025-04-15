@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI 대화상자</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to bottom right, #ebf4ff, #c7d2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      width: 360px;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .button {
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      background-color: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #4f46e5;
+    }
+    .response {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🤖 AI 대화상자</h2>
+    <p>AI에게 물어보고 싶은 질문을 선택하세요:</p>
+    <button class="button" onclick="showResponse(0)">잘 지냈어요?</button>
+    <button class="button" onclick="showResponse(1)">재밌는 농담 하나 해줘</button>
+    <button class="button" onclick="showResponse(2)">당신은 누구예요?</button>
+    <div id="responseBox" class="response" style="display: none;"></div>
+  </div>
+
+  <script>
+    const responses = [
+      "저는 잘 지내고 있어요. 도와드릴 일이 있을까요?",
+      "프로그래머가 커피를 좋아하는 이유는? 버그(우유)가 없어서요!",
+      "저는 AI 대화 도우미예요. 언제든 도와드릴게요."
+    ];
+
+    function showResponse(index) {
+      const box = document.getElementById("responseBox");
+      box.textContent = responses[index];
+      box.style.display = "block";
+    }
+  </script>
+</body>
+</html>
